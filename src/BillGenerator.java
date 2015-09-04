@@ -5,17 +5,22 @@ import java.util.List;
 //Bill generator is which generates the bill for the goods purchased by the customer
 public class BillGenerator {
     public String bill(String listOfItems) {
-        String ch = " ";
-        List<Object> splitedItem = getSplitList(listOfItems, ch);
-        int size = splitedItem.size();
-        String totalCost = (String) splitedItem.get(size - 1);
+        Double totalCost = null;
+        List<List<String>> listOfSplitedItems= new ArrayList<>();
+        List<String> splitedListOfItems=getSplitList(listOfItems,"\n");
+        for (int i = 0; i < splitedListOfItems.size(); i++) {
+            listOfSplitedItems.add(splitedListOfItems);
+            int sizeOfSplitedItem1=listOfSplitedItems.get(i).size();
+             totalCost+= new Double( listOfSplitedItems.get(i).get(sizeOfSplitedItem1 - 1));
+        }
+
         return listOfItems + "\n" +
                 " SalesTax:0.00\n" +
                 " Total :" + totalCost;
     }
 
-    private List<Object> getSplitList(String item, String ch) {
-        List<Object> splitedItem = new ArrayList<>();
+    private List<String> getSplitList(String item, String ch) {
+        List<String> splitedItem = new ArrayList<>();
         Collections.addAll(splitedItem, item.split(ch));
         return splitedItem;
     }
