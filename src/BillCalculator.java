@@ -5,14 +5,12 @@ import java.util.List;
 
 public class BillCalculator {
     public Double getTotalCost(String listOfItems) {
-        Double totalCost = 0.0;
-        totalCost = getSplitListOfItems(listOfItems, totalCost);
         DecimalFormat df = new DecimalFormat("#.##");
-        Double Cost=new Double(df.format(totalCost));
-        return Cost;
+        return new Double(df.format(calculateTotalCost(listOfItems)));
     }
 
-    private Double getSplitListOfItems(String listOfItems, Double totalCost) {
+    private Double calculateTotalCost(String listOfItems) {
+        Double totalCost = 0.0;
         List<List<String>> listOfSplitedItems= new ArrayList<>();
         List<String> splitedListOfItems=getSplitList(listOfItems,"\n");
         for (int i = 0; i < splitedListOfItems.size(); i++) {
