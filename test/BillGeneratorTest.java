@@ -18,10 +18,10 @@ public class BillGeneratorTest {
     }
 
     @Test
-    public void shouldReturnReceiptForTwoItemsWhichAreExempted(){
-        BillGenerator billGenerator=new BillGenerator();
-        String actual=billGenerator.bill("1 book of 12.36\n1 chocolate bar at 0.85");
-        assertEquals("1 book of 12.36\n1 chocolate bar at 0.85\n SalesTax:0.00\n Total :13.21",actual);
+    public void shouldReturnReceiptForTwoItemsWhichAreExempted() {
+        BillGenerator billGenerator = new BillGenerator();
+        String actual = billGenerator.bill("1 book of 12.36\n1 chocolate bar at 0.85");
+        assertEquals("1 book of 12.36\n1 chocolate bar at 0.85\n SalesTax:0.00\n Total :13.21", actual);
     }
 
 }

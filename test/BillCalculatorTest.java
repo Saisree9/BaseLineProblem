@@ -9,6 +9,7 @@ public class BillCalculatorTest {
         Double actual = billCalculator.getTotalCost("1 chocolate bar at 0.85");
         assertEquals(0.85, actual, 0.00);
     }
+
     @Test
     public void shouldReturnTheCostOfThePurchasedItems() {
         BillCalculator billCalculator = new BillCalculator();
